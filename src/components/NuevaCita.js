@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import uuid from "uuid";
+import PropTypes from "prop-types";
 
 const stateInicial = {
   cita: { mascota: "", dueno: "", fecha: "", hora: "", sintomas: "" },
@@ -59,8 +60,8 @@ class NuevaCita extends Component {
           </h2>
           {error? <div className="alert alert-danger mt-2 mb-5">Todos los campos son mandatorios</div>:null}
           <form>
-            <div class="form-group row">
-              <label className="col-sm-4 col-lg-2 col-form-label" for="">
+            <div className="form-group row">
+              <label className="col-sm-4 col-lg-2 col-form-label">
                 Nombre Mascota
               </label>
               <div className="col-sm-8 col-lg-10">
@@ -73,15 +74,15 @@ class NuevaCita extends Component {
                   onChange={this.handleChange}
                   value={this.state.cita.mascota}
                 />
-                <small id="helpId" class="text-muted">
+                <small id="helpId" className="text-muted">
                   Help text
                 </small>
               </div>
             </div>
             {/** form-group */}
 
-            <div class="form-group row">
-              <label className="col-sm-4 col-lg-2 col-form-label" for="">
+            <div className="form-group row">
+              <label className="col-sm-4 col-lg-2 col-form-label">
                 Nombre Dueño
               </label>
               <div className="col-sm-8 col-lg-10">
@@ -94,15 +95,15 @@ class NuevaCita extends Component {
                   onChange={this.handleChange}
                   value={this.state.cita.dueno}
                 />
-                <small id="helpId" class="text-muted">
+                <small id="helpId" className="text-muted">
                   Help text
                 </small>
               </div>
             </div>
             {/** form-group */}
 
-            <div class="form-group row">
-              <label className="col-sm-4 col-lg-2 col-form-label" for="">
+            <div className="form-group row">
+              <label className="col-sm-4 col-lg-2 col-form-label">
                 Fecha
               </label>
               <div className="col-sm-8 col-lg-4">
@@ -114,12 +115,12 @@ class NuevaCita extends Component {
                   onChange={this.handleChange}
                   value={this.state.cita.date}
                 />
-                <small id="helpId" class="text-muted">
+                <small id="helpId" className="text-muted">
                   Help text
                 </small>
               </div>
 
-              <label className="col-sm-4 col-lg-2 col-form-label" for="">
+              <label className="col-sm-4 col-lg-2 col-form-label">
                 Hora
               </label>
               <div className="col-sm-8 col-lg-4">
@@ -131,15 +132,15 @@ class NuevaCita extends Component {
                   onChange={this.handleChange}
                   value={this.state.cita.hora}
                 />
-                <small id="helpId" class="text-muted">
+                <small id="helpId" className="text-muted">
                   Help text
                 </small>
               </div>
             </div>
             {/** form-group */}
 
-            <div class="form-group row">
-              <label className="col-sm-4 col-lg-2 col-form-label" for="">
+            <div className="form-group row">
+              <label className="col-sm-4 col-lg-2 col-form-label">
                 Sintomas
               </label>
               <div className="col-sm-8 col-lg-10">
@@ -151,7 +152,7 @@ class NuevaCita extends Component {
                   onChange={this.handleChange}
                   value={this.state.sintomas}
                 ></textarea>
-                <small id="helpId" class="text-muted">
+                <small id="helpId" className="text-muted">
                   Help text
                 </small>
               </div>
@@ -170,5 +171,10 @@ class NuevaCita extends Component {
     );
   }
 }
+
+NuevaCita.propTypes = {
+  crearNuevaCita : PropTypes.func.isRequired,
+};
+
 
 export default NuevaCita;

@@ -55,7 +55,7 @@ export class App extends Component{
           titulo='Pacientes Veterinaria'
           />
           <div className="row">
-            <div class="col-md-10 mx-auto">
+            <div className="col-md-10 mx-auto">
               <NuevaCita
                crearNuevaCita={this.crearNuevaCita}/>
             </div>
